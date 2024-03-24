@@ -3,10 +3,7 @@
     Snake Game
 '''
 
-import tkinter as tk
-import ttkbootstrap as ttk
-from ttkbootstrap.constants import *
-
+import pygame
 
 '''
 Things to do:
@@ -20,13 +17,22 @@ Extra:
     Each login will save high score
 '''
 
+pygame.init()
+screen = pygame.display.set_mode((1280, 720))
+clock = pygame.time.Clock()
+running = True
+
 def main(): # the game will go here
-    root = tk.Tk()
-    
-    test = ttk.Button(root, text='test 1', bootstyle = SUCCESS)
-    test.pack()
-    
-    root.mainloop()
+    while running:
+        for event in pygame.even.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+    screen.fill("purple")
+
+    pygame.display.flip()
+
+    clock.tick(60)
 
 
 if __name__ == "__main__": # makes sure that the main() function is not imported 
